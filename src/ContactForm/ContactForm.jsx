@@ -13,9 +13,33 @@ function ContactForm() {
         <Button text="VIA SUPPORT CHAT" icon={<MdMessage />}/>
         <Button text="VIA CALL" icon={<FaPhoneAlt />}/>
         </div>
-        <Button className={contactFormStyle.email_btn} text="VIA EMAIL" icon={<HiMail />}/>
+        <Button
+        isOutline={true} 
+        text="VIA EMAIL" 
+        icon={<HiMail fontSize="24px"/>}/>
+
+        <form>
+
+          <div className={contactFormStyle.form_container}>
+          <label htmlFor='name'>Name</label>
+          <input type='text' name='name'></input>
+          </div>
+          <div className={contactFormStyle.form_container}>
+          <label htmlFor='email'>Email</label>
+          <input type='email' name='email'></input>
+          </div>
+          <div className={contactFormStyle.form_container}>
+          <label htmlFor='text'>Text</label>
+          <textarea name='email'></textarea>
+          <Button
+          text="SUBMIT BUTTON"/>
+          </div>         
+          
+        </form>
     </div>
-    <div className={contactFormStyle.contact_image}></div>
+    <div className={contactFormStyle.contact_image}>
+      <img src='/images/services.jpg' alt='sarviceimg'/>
+    </div>
     </section>
   )
 }
