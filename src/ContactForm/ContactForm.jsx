@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import contactFormStyle from './contactForm.module.css'
 import Button from '../Button/Button'
 import { MdMessage } from 'react-icons/md'
@@ -7,15 +7,26 @@ import { HiMail } from 'react-icons/hi'
 
 function ContactForm() {
 
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [text,setText]=useState("");
+
   const onCallSubmit=()=>{
     console.log("CALL ")
   }
 
   const onSubmit=(event)=>{
+    
     event.preventDefault();
-    console.log("name",event.target[0].value)
-    console.log("email",event.target[1].value)
-    console.log("text",event.target[2].value)
+    setName(event.target[0].value);
+    setEmail(event.target[1].value);
+    setText(event.target[1].value);
+  
+    // console.log(
+    //   name,
+    //   email,
+    //   text 
+    // )
   }
 
 
@@ -51,6 +62,9 @@ function ContactForm() {
           text="SUBMIT BUTTON"/>
           </div>
           </div>         
+          <div>
+            {name + "" +email+ "" +text}
+          </div>
           
         </form>
     </div>

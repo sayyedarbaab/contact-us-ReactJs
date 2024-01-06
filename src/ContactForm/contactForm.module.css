@@ -36,6 +36,7 @@
 .form_container textarea{
     height: 15vh;
     margin-top: 10px;
+    padding: 8px;
 }
 .contact_image img{
     width: 85%;
