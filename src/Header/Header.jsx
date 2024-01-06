@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className={`container ${styled.contact_section}`}>
     <h1>Contact us</h1>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+    <p>Include a clear call-to-action that encourages visitors to get in touch. Use language like "Contact us today," "Send us a message," or "Get started now."
     </p>      
     </div>
   )
