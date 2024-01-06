@@ -6,19 +6,34 @@ import { FaPhoneAlt } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 
 function ContactForm() {
+
+  const onCallSubmit=()=>{
+    console.log("CALL ")
+  }
+
+  const onSubmit=(event)=>{
+    event.preventDefault();
+    console.log("name",event.target[0].value)
+    console.log("email",event.target[1].value)
+    console.log("text",event.target[2].value)
+  }
+
+
+
+
   return (
     <section className={contactFormStyle.container}>
     <div className={contactFormStyle.contact_form}>
         <div className={contactFormStyle.top_btn}>
         <Button text="VIA SUPPORT CHAT" icon={<MdMessage />}/>
-        <Button text="VIA CALL" icon={<FaPhoneAlt />}/>
+        <Button onClick={onCallSubmit} text="VIA CALL" icon={<FaPhoneAlt />}/>
         </div>
         <Button
         isOutline={true} 
         text="VIA EMAIL" 
         icon={<HiMail fontSize="24px"/>}/>
 
-        <form>
+        <form onSubmit={onSubmit}>
 
           <div className={contactFormStyle.form_container}>
           <label htmlFor='name'>Name</label>
@@ -31,8 +46,10 @@ function ContactForm() {
           <div className={contactFormStyle.form_container}>
           <label htmlFor='text'>Text</label>
           <textarea name='email'></textarea>
+          <div className={contactFormStyle.sub_btn}>
           <Button
           text="SUBMIT BUTTON"/>
+          </div>
           </div>         
           
         </form>

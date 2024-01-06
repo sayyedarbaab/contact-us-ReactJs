@@ -1,12 +1,13 @@
 import React from 'react'
 import styleButton from './button.module.css'
 
-function Button({icon,text}) {
+function Button({isOutline,icon,text,...rest}) {
   return (
-    <div className={styleButton.primary_btn}>
+    <button {...rest} 
+    className={isOutline ? styleButton.outline_btn :styleButton.primary_btn }>
       {icon}
       {text}
-    </div>
+    </button>
   )
 }
 
